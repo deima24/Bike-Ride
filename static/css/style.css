@@ -12,3 +12,12 @@
 .nav-item {
     padding-right: 1rem;
 }
+
+body {
+    background-color: #e213d1;
+}
+
+.bike-img {
+    width: 100%;
+    height: auto;
+}

@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Bike Ride</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Bike Ride</a>
           <button 
           class="navbar-toggler" 
           type="button" 
@@ -25,10 +28,10 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="rides.html">Ride Blog</a>
+                <a class="nav-link" href="{% url 'post_detail' %}">Ride Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Register</a>
@@ -41,7 +44,13 @@
         </div>
     </nav>
 
-    
+
+    <div class="container-fluid text-center">
+              <img class="img-fluid bike-img"
+              src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bike photo">
+    </div>
+  
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
