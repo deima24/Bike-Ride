@@ -31,7 +31,7 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'post_detail' %}">Ride Blog</a>
+                <a class="nav-link" href="{% url 'posts' %}">Ride Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Register</a>
@@ -45,10 +45,9 @@
     </nav>
 
 
-    <div class="container-fluid text-center">
-              <img class="img-fluid bike-img"
-              src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bike photo">
-    </div>
+    {% block content %}
+    
+    {% endblock content %}
   
 
 

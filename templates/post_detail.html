@@ -1,4 +1,30 @@
 {% extends "base.html" %}
 
-
+{% block content %}
 <p>hello</p>
+
+{% endblock content %}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+            {% for post in object_list %}
+            <div>{{ post.title }}</div>
+            <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
