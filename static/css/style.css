@@ -14,10 +14,15 @@
 }
 
 body {
-    background-color: #e213d1;
+    background-color: #000000;
 }
 
 .bike-img {
     width: 100%;
     height: auto;
+}
+
+.social-links {
+    color: #7FFF00;
+    font-size: x-large;
 }
