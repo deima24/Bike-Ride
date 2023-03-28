@@ -31,3 +31,13 @@ body {
     text-align: center;
     color:aliceblue;
 }
+
+.card-title {
+    color: crimson;
+}
+
+a {
+    text-decoration: none;
+}
+
+
