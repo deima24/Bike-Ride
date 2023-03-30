@@ -40,4 +40,11 @@ a {
     text-decoration: none;
 }
 
+.post-text {
+    color: white;
+    position: relative;
+}
 
+.post-body {
+    background-color: #F5DEB3;
+}
