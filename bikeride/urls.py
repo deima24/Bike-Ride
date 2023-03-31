@@ -22,4 +22,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", TemplateView.as_view(template_name="index.html"),  name="home"),
     path("posts/", include("ride.urls"), name="ride_urls"),
+    path('accounts/', include('allauth.urls')),
 ]
