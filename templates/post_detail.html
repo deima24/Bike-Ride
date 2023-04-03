@@ -103,7 +103,7 @@
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <!-- commenter username-->
-                <p class="card-text">Posting as: {{ user.username }}</p>
+                <p class="card-text">Logged as: {{ user.username }}</p>
                 <!-- Comment form -->
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
