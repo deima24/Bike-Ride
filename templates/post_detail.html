@@ -8,13 +8,13 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 post-text">
-                <!-- Post title goes in these h1 tags aat the top of the page -->
+                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
             </div>
         </div>
 
         <div class="d-md-block col-md-12 offset-md-2 post-image">
-            <!-- The featured image URL goes in the src attribute image is shown between post title and post author -->
+            <!-- The featured image URL goes in the src attribute image is shown between the title of the post and the author-->
             {% if "placeholder" in post.featured_image.url %}
             <img src="https://res.cloudinary.com/dmecv9zwa/image/upload/v1680130673/x6ayc6fvpikajmenqnyv.jpg" width="60%">
             {% else %}
@@ -55,12 +55,12 @@
                             {% endif %}
                             <span class="text-secondary">{{ post.number_of_likes }}</span>
                         </strong>
-                        <!-- The number of likes goes before the closing strong tag -->
+                        <!-- The number of likes goes at the end of the post -->
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
+                            <!-- Our total comments goes next to the likes -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -81,7 +81,7 @@
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        <!-- The commenter's name goes here. -->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
@@ -91,13 +91,17 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 post-body">
             <div class="card-body">
-                <!-- For later -->
+                <!-- gives you an elert that the post is waiting for to de approved  -->
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
                 
                 <!-- Check if the user is logged in-->
                 {% if user.is_authenticated %}
@@ -110,6 +114,7 @@
                     {% csrf_token %}
                     <button type="submit" class="btn button btn-signup btn-lg">Submit</button>
                 </form>
+                {% endif %}
                 {% endif %}
                 
                 

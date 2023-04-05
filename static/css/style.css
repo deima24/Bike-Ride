@@ -1,3 +1,4 @@
+/* nav bar */
 
 .navbar-brand {
     font-size: 2.5rem;
@@ -13,14 +14,40 @@
     padding-right: 1rem;
 }
 
+/* body */
+
 body {
     background-color: #000000;
 }
+
+
+/* posts*/
+
+.post-body {
+    background-color: #F5DEB3;
+}
+
+.post-text {
+    color: white;
+    position: relative;
+}
+
+.card-title {
+    color: crimson;
+}
+
+.posttitle:hover {
+    color: green;
+}
+
+/* main page img */
 
 .bike-img {
     width: 100%;
     height: auto;
 }
+
+/* footer */
 
 .social-links {
     color: #7FFF00;
@@ -32,22 +59,11 @@ body {
     color:aliceblue;
 }
 
-.card-title {
-    color: crimson;
-}
-
 a {
     text-decoration: none;
 }
 
-.post-text {
-    color: white;
-    position: relative;
-}
-
-.post-body {
-    background-color: #F5DEB3;
-}
+/* Buttons */
 
 .btn-like {
     color: #E84610;
@@ -63,6 +79,21 @@ a {
     background: #87CEFA;
 }
 
-.posttitle:hover {
-    color: green;
+.button:hover {
+    background:#7FFF00;
+    border-radius: 1em;
 }
+
+.button {
+    outline: 3px solid blue;
+    border-radius: 1em;
+}
+
+/*
+.btn-signup:hover {
+    background: #87CEFA;
+}
+
+.btn-signup {
+    color: red;
+}*/
