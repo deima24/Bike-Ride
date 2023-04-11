@@ -89,11 +89,29 @@ a {
     border-radius: 1em;
 }
 
-/*
-.btn-signup:hover {
-    background: #87CEFA;
+
+.login,
+.login_text,
+.signup,
+.signup_text,
+.logout_text {
+    color: #F5DEB3;
 }
 
-.btn-signup {
-    color: red;
-}*/
+.login_text {
+    font-size: 1.2rem;
+}
+
+.login_top,
+.signup_top,
+.logout_top {
+    color: #7FFF00;
+}
+
+.right {
+    background-color: #F5FFFA;
+}
+
+.post_btn {
+    margin-top: 1cm;
+}
