@@ -12,19 +12,23 @@
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
+                <!-- post image -->
                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                <!--<h2 class="card-title">{{ post.title }}</h2> -->
                 <a href="{% url 'post_detail' post.slug  %}">
+                  <!-- post title -->
                   <h2 class="card-title posttitle">{{ post.title }}</h2>
                 </a>
+                <!-- post author and when it was posted -->
                 <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                <!-- beggining of the post so reader can read some text before enterint the post -->
                 <p class="card-text">{{ post.content|slice:":100" }}</p>
+                <!-- number of like the post has -->
                 <p class="btn-like"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                 
               </div>
             </div>
           </div>
-
+          <!-- creates 3 post per line -->
           {% if forloop.counter|divisibleby:3 %}
 
         </div>
@@ -36,6 +40,7 @@
         </div>
       </div>
     </div>
+    <!-- creates next button if there is more then 6 post per page -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">

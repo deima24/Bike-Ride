@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top post-body">
             <div>
-                <!-- post conter goes after the author-->
+                <!-- post content goes after the author-->
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
@@ -60,7 +60,7 @@
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total comments goes next to the likes -->
+                            <!-- total comments goes next to the likes -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
