@@ -11,7 +11,7 @@ The site is aimed at anyone that has an interesting story to tell about there ex
 
 ## Agile Planning
 
-![agile](media/images/agile.png)
+![agile](/media/images/agile.png)
 
 This project was developed using agile methodologies. All the features had to be done to make this web so user could use it. All the features were added from a agile. 
 
