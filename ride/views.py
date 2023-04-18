@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.views.generic import (CreateView,DetailView, ListView, DeleteView, UpdateView)
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class PostList(generic.ListView):
@@ -79,3 +81,48 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+
+class PostCreate(CreateView):
+    """ A view to create an post """
+
+    form_class = IdeaForm
+    template_name = 'create_post.html'
+    success_url = ""
+    model = Post
+
+    def form_valid(self, form):
+        """ If form is valid return to browse pots """
+        form.instance.author = self.request.user
+        messages.success(self.request, 'Post created successfully')
+        return super(PostCreate, self).form_valid(form)
+
+class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ A view to delete an post """
+    model = Post
+    success_url = ""
+    template_name = "post_delete.html"
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
+
+
+class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ A view to edit an idea """
+
+    Model = Post
+    form_class = PostForm
+    success_url = ""
+    template_name = "post_edit.html"
+    queryset = Post.objects
+
+    def form_valid(self, form):
+        """ If form is valid return to browse ideas"""
+        self.success_url + str(self.object.pk) + '/'
+        messages.success(self.request, 'Post updated successfully')
+        return super().form_valid(form)
+
+    def test_func(self):
+        """ A function to test if the user is the author """
+        return self.request.user == self.get_object().author
