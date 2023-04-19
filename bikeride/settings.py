@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 SITE_ID = 1
@@ -107,8 +108,8 @@ WSGI_APPLICATION = 'bikeride.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
+print(os.environ.get("DATABASE_URL"))
+DATABASES = { 
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 

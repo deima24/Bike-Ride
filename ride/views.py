@@ -5,7 +5,8 @@ from .models import Post
 from .forms import CommentForm, PostForm
 from django.views.generic import (CreateView,DetailView, ListView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.contrib import messages
+from django.template.defaultfilters import slugify
 
 class PostList(generic.ListView):
     model = Post
@@ -87,14 +88,15 @@ class PostLike(View):
 class PostCreate(CreateView):
     """ A view to create an post """
 
-    form_class = IdeaForm
+    form_class = PostForm
     template_name = 'create_post.html'
-    success_url = ""
+    #success_url = ""
     model = Post
 
     def form_valid(self, form):
         """ If form is valid return to browse pots """
         form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
         messages.success(self.request, 'Post created successfully')
         return super(PostCreate, self).form_valid(form)
 
