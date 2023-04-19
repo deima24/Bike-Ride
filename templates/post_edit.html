@@ -3,20 +3,22 @@
 
 {% block content %}
 <div class="container">
-    <!-- Edit idea form heading and information -->
-    <h1>Edit your Idea</h1>
-    <p>If you have any updates to your existing idea please update them here.</p>
-    <!-- Edit idea form-->
-    <form class="edit_idea_form" action="{% url 'post_edit' post.id %}" method="POST" enctype="multipart/form-data">
+    <div class="edit_post_form">
+        <!-- Edit post form heading and information -->
+        <h1>Edit your Post</h1>
+        <p>If you have any updates to your existing post please update it here.</p>
+        <!-- Edit post form-->
+        <form  action="{% url 'post_edit' post.id %}" method="POST" enctype="multipart/form-data">
 
-        {% csrf_token %}
+            {% csrf_token %}
 
-        {{ form.id }}
-        {{ form|crispy }}
-        {{ form.media }}
+            {{ form.id }}
+            {{ form|crispy }}
+            {{ form.media }}
 
-        <input class="button" type="submit" value="Submit">
-    </form>
+            <input class="button edit-btn" type="submit" value="Submit">
+        </form>
+    </div>
 
 </div>
 {% endblock %}

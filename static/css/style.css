@@ -27,7 +27,10 @@ body {
     background-color: #F5DEB3;
 }
 
-.post-text {
+.post-text,
+.edit_post_form,
+.create_post_form,
+.post_delete {
     color: white;
     position: relative;
 }
@@ -112,6 +115,8 @@ a {
     background-color: #F5FFFA;
 }
 
-.post_btn {
+.post_btn,
+.edit-btn,
+.create_btn {
     margin-top: 1cm;
 }

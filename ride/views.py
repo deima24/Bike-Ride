@@ -90,7 +90,7 @@ class PostCreate(CreateView):
 
     form_class = PostForm
     template_name = 'create_post.html'
-    #success_url = ""
+    success_url = "/posts/"
     model = Post
 
     def form_valid(self, form):
@@ -103,7 +103,7 @@ class PostCreate(CreateView):
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ A view to delete an post """
     model = Post
-    #success_url = ""
+    success_url = "/posts/"
     template_name = "post_delete.html"
 
     def test_func(self):
@@ -115,7 +115,7 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     Model = Post
     form_class = PostForm
-    #success_url = ""
+    success_url = "/posts/"
     template_name = "post_edit.html"
     queryset = Post.objects
 
@@ -123,7 +123,7 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """ If form is valid return to browse ideas"""
         self.success_url + str(self.object.pk) + '/'
         messages.success(self.request, 'Post updated successfully')
-        return super().form_valid(form)
+        return super().form_valid(form) 
 
     def test_func(self):
         """ A function to test if the user is the author """
