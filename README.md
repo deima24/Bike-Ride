@@ -37,3 +37,37 @@ Once the user has signed in the navigation menu changes to Home, Ride Blog, Crea
 The user will also receive a message saying they have successfully signed in.
 
 ![logedIn](media/images/Loged%20In.png)
+
+on smaller devices, the menu options collapse into a button
+
+![smallernavbar](media/images/nav%20smaller%20size.png)
+
+## Home page
+
+User Story - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
+
+The front page contains a main image of the bike on the road. This will make it evident to the user that the website is about the bike rides.
+
+![mainpageimg](media/images/main%20img.png)
+
+Under this image is information about the site and how to share and browse rides.
+
+![mainpagetext](media/images/mainpgtext.png)
+
+
+## Footer
+
+User Story: As site owner, I want to share social media links and contact details
+
+The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their ideas and promote the site via social media.
+
+![pagefooter](media/images/footer.png)
+
+
+## RideBlog
+
+User Story: As a user that is not logged in, I want to be able to browse ideas from other users.
+
+Anybody can use the website to browse post, they are shown in the Ride Blog page with the titles and pictures in rows of 3 and 6 posts per page. The post Title is a link to open up each post with further information about it. Also You can read the beginning of the post.
+
+![post](media/images/posts.png)
