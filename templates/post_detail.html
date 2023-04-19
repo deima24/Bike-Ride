@@ -11,6 +11,25 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
             </div>
+            <!-- Delete Post -->
+            {% if post.author == request.user%}
+            <div class="row-md-3">
+                <div class="col-md-3 float-right ">
+                    <span>
+                        <a href="{% url 'post_delete' post.pk %}" class="delete large-icon"
+                            aria-label="Click to delete post">
+                            <i class="far fa-trash-alt fa-2x"></i>
+                        </a>
+                    </span>
+                    <!-- Edit Post -->
+                    <span>
+                        <a href="{% url 'post_edit' post.pk %}" class="edit large-icon" aria-label="Click to edit idea">
+                            <i class="far fa-edit fa-2x"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            {% endif %}
         </div>
 
         <div class="d-md-block col-md-12 offset-md-2 post-image">

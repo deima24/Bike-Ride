@@ -7,7 +7,7 @@
     <h1>Edit your Idea</h1>
     <p>If you have any updates to your existing idea please update them here.</p>
     <!-- Edit idea form-->
-    <form class="edit_idea_form" action="{% url 'idea_edit' idea.id %}" method="POST" enctype="multipart/form-data">
+    <form class="edit_idea_form" action="{% url 'post_edit' post.id %}" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
 

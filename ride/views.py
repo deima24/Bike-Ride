@@ -103,7 +103,7 @@ class PostCreate(CreateView):
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ A view to delete an post """
     model = Post
-    success_url = ""
+    #success_url = ""
     template_name = "post_delete.html"
 
     def test_func(self):
@@ -115,7 +115,7 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     Model = Post
     form_class = PostForm
-    success_url = ""
+    #success_url = ""
     template_name = "post_edit.html"
     queryset = Post.objects
 
