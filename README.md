@@ -88,7 +88,7 @@ Logged-on users can also comment on and like the ideas.
 ![likes](media/images/like.png)
 
 
-## Sign in, log in, log out
+## Sign in, Sign up, Sign out
 
 As a new user, you are able to sign up easily.
 As a returning user, you are able to log in easily.
@@ -102,3 +102,43 @@ Users can sign in and out using forms and confirmation pages. These forms were m
 ![SignUp](media/images/SignUp.png)
 
 ![SignOut](media/images/SignOut.png)
+
+
+## Create Post
+
+User Story: As a user, I want to be able to input my own post.
+
+Once the user is logged in they can create their own post using the create post form.
+
+![CreatePost](media/images/CreatePost.png)
+
+
+## Edit and Delete Idea
+
+As a user, you are able to edit post that you have created.
+As a user, you are able to delete post that you have created.
+As the site owner I want to ensure only the creator of an idea can edit or delete it.
+
+The creator of an post will be able to view edit and delete icons on their post detail page. The edit button will take them to the edit post form but it will be pre-populated with information that is already saved. The user can then update the information and save it again where they will be redirected back to the post page.
+
+They will get a message to advise them that their creation/edit has been successful.
+
+![EditPost](media/images/EditPost.png)
+
+The delete button will take the user to a confirmation page asking them to confirm they wish to delete that post. Once an post is deleted all comments will be deleted with it.
+
+![DeletePostConfirmation](media/images/deletepostconfirm.png)
+
+The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their post.
+
+![DeleteAndEdit](media/images/deleteandedit.png)
+
+
+## Database
+
+The data was designed to give the user CRUD functionality once signed in. Posts are connected to the author by foreign key which allows users to edit and delete pots connected to their account.
+
+
+## Security
+
+Views were secured by using the django based view mixin, UserPassesTestMixin. A test function was created to use the mixin and checks that the user is authorised to access the page. an if statement is also used in idea_detail.html to hide the delete and edit buttons if the user is not authorised.
