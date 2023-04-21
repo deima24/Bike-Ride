@@ -113,7 +113,7 @@ Once the user is logged in they can create their own post using the create post 
 ![CreatePost](media/images/CreatePost.png)
 
 
-## Edit and Delete Idea
+## Edit and Delete Post
 
 As a user, you are able to edit post that you have created.
 As a user, you are able to delete post that you have created.
@@ -141,4 +141,69 @@ The data was designed to give the user CRUD functionality once signed in. Posts 
 
 ## Security
 
-Views were secured by using the django based view mixin, UserPassesTestMixin. A test function was created to use the mixin and checks that the user is authorised to access the page. an if statement is also used in idea_detail.html to hide the delete and edit buttons if the user is not authorised.
+Views were secured by using the django based view mixin, UserPassesTestMixin. A test function was created to use the mixin and checks that the user is authorised to access the page, an if statement is also used in post_detail.html to hide the delete and edit buttons if the user is not authorised.
+
+## Images
+
+All the images are used from [pexels](https://www.pexels.com/).
+
+
+# Technologies
+
+- HTML
+    - The structure of the site was made using HTML
+- CSS
+    - The website was styled using CSS in an external stylesheet
+- Python
+    - Python was the main programming language used within the django app
+- Github
+    - Source code was hosted in Github
+- javascript
+    - I used a very small amount of javascript to make the messages disappear
+
+
+# Testing
+
+## Navigation Links
+
+Testing was performed on on all navigation links throughout the site. I achieved this by clicking on each link to ensure it went to the correct place.
+
+All navigation links worked as expected
+
+
+## Footer
+
+All the font awesome icons in the footer opened to their respective websites, in a new window, as expected.
+
+
+## Login Page
+
+Testing was taken out to ensure a user could login to the website.
+- Enter User Name and Password
+- Click Sign Up
+
+Outcome: User is redirected to the home page. The Navbar changed to show the create a post option and log out option.
+
+
+## Log out Page
+
+Testing was taken out to ensure a user could log out of the website.
+
+- Navigate to Log Out page
+- Click Confirm button
+
+Outcome: User is taken back to the homepage with the Create post option hidden and the Register option showing.
+
+
+## Log in page
+
+Testing was taken out to ensure a user could log in to the website.
+
+- Navigate to LogIn page
+- Enter User Name and Password
+- Click Sign in
+
+Outcome: User is redirected to the home page. The Navbar changes to show the create a post option and log out options. A message appears to say they have successfully logged in.
+
+
+## Create post Page
