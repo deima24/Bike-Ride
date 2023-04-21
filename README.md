@@ -7,7 +7,7 @@ BikeRide is a activity sharing site for anyone that has a good story to tell abo
 
 ## Site Goals
 
-The site is aimed at anyone that has an interesting story to tell about there expericen or an idea. Without signing in the user can browse ideas and see other people storyes. They will also be able to log on and share ideas of their own and comment on other people’s posts. They will also be able to edit and delete their ideas.
+The site is aimed at anyone that has an interesting story to tell about there expericen or an idea. Without signing in the user can browse posts and see other people storyes. They will also be able to log on and share ideas of their own and comment on other people’s posts. They will also be able to edit and delete their posts.
 
 ## Agile Planning
 
@@ -59,14 +59,14 @@ Under this image is information about the site and how to share and browse rides
 
 User Story: As site owner, I want to share social media links and contact details
 
-The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their ideas and promote the site via social media.
+The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their posts and promote the site via social media.
 
 ![pagefooter](media/images/footer.png)
 
 
 ## RideBlog
 
-User Story: As a user that is not logged in, I want to be able to browse ideas from other users.
+User Story: As a user that is not logged in, I want to be able to browse posts from other users.
 
 Anybody can use the website to browse post, they are shown in the Ride Blog page with the titles and pictures in rows of 3 and 6 posts per page. The post Title is a link to open up each post with further information about it. Also You can read the beginning of the post.
 
@@ -75,13 +75,13 @@ Anybody can use the website to browse post, they are shown in the Ride Blog page
 
 ## Post Details
 
-User Story: As a user, I want to be able to comment and like otherpeople’s ideas
+User Story: As a user, I want to be able to comment and like otherpeople’s posts
 
 Each user story opens up to a full page which contains the image, a full content of the post and read post comments.
 
 ![contentpostandcomment](media/images/contentandcomments.png)
 
-Logged-on users can also comment on and like the ideas.
+Logged-on users can also comment on and like the posts.
 
 ![comment](media/images/comment.png)
 
@@ -117,7 +117,7 @@ Once the user is logged in they can create their own post using the create post 
 
 As a user, you are able to edit post that you have created.
 As a user, you are able to delete post that you have created.
-As the site owner I want to ensure only the creator of an idea can edit or delete it.
+As the site owner I want to ensure only the creator of an post can edit or delete it.
 
 The creator of an post will be able to view edit and delete icons on their post detail page. The edit button will take them to the edit post form but it will be pre-populated with information that is already saved. The user can then update the information and save it again where they will be redirected back to the post page.
 
@@ -129,7 +129,7 @@ The delete button will take the user to a confirmation page asking them to confi
 
 ![DeletePostConfirmation](media/images/deletepostconfirm.png)
 
-The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their post.
+The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the post creator who is logged in can update or delete their post.
 
 ![DeleteAndEdit](media/images/deleteandedit.png)
 
@@ -207,3 +207,59 @@ Outcome: User is redirected to the home page. The Navbar changes to show the cre
 
 
 ## Create post Page
+
+Testing was taken out to ensure the user could create a new post.
+
+When the user is logged in.
+
+- Navigate to create a post page
+- Complete form
+    - Title
+    - Add image
+    - Content of the post
+- Click Submit
+
+Outcome if all fields are filled in correctly the user will be redirected to the Ride Blog page where they can view their post. A message appears to say they have successfully created their post.
+
+
+## Edit Post
+
+Tested to ensure the user could edit their post.
+
+When the user is logged in
+
+- If the user is the Author of the post, they will see a delete button and an Edit button under the post Name
+- Click the edit button
+- Update the fields you wish to update
+- Click Submit
+
+Outcome: The user will be redirected back to the Ride Blog page which will show the new information, and a message appears to say they have succesfully updated their post.
+
+
+## Delete a post
+
+Tested to ensure a user could delete their post.
+
+When the user is logged in
+
+- Click on the post name
+- If the user is the Author of the post, they will see a delete button and an Edit button under the Post Name
+- Click the delete button
+- User is taken to a Delete confirmation page asking them if their wish to delete that post showing the post name.
+- Click Submit
+
+Outcome: The user will be redirected back to the Ride Blog page and the post along with the comments will be deleted.
+
+## Comment on a post
+
+First I checked the comment section when the user is Logged out. As expected there is no option to enter a comment at all. You can view other people’s comments but the box to write your own comment is hidden.
+
+When the user is logged in.
+
+- Click on the post name
+- scroll down to the comments section.
+- Write your comment in the comments box.
+- Click submit
+
+The comment will appear in the comment section to the left of the comment box.
+
