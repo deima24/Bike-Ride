@@ -13,7 +13,7 @@
             <div class="card mb-4">
               <div class="card-body">
                 <!-- post image -->
-                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="">
                 <a href="{% url 'post_detail' post.slug  %}">
                   <!-- post title -->
                   <h2 class="card-title posttitle">{{ post.title }}</h2>

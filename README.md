@@ -263,3 +263,10 @@ When the user is logged in.
 
 The comment will appear in the comment section to the left of the comment box.
 
+
+## Validator Testing
+
+All pages were run through the [Html Checker](https://validator.w3.org/nu/). All issues were fixed and all pages ran through the checker with no errors.
+Due to the use of django language within the HTML files to complete this check I had to retrieve the html code from the open web page and right-click to view the source code. I could then copy and paste this into the html checker.
+
+![htmlChecker](media/images/htmlCheck.png)
