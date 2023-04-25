@@ -270,3 +270,30 @@ All pages were run through the [Html Checker](https://validator.w3.org/nu/). All
 Due to the use of django language within the HTML files to complete this check I had to retrieve the html code from the open web page and right-click to view the source code. I could then copy and paste this into the html checker.
 
 ![htmlChecker](media/images/htmlCheck.png)
+
+
+## Deployment
+
+To deploy my site to Heroku I followed the following steps
+
+- Navigate to heroku and create/log into account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app (europe)
+- Click the resources tab and search for Heroku Postgres
+- Go to the settings tab and then click reveal config vars
+- Add config vars
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repository you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click Deploy
+
+
+## References
+
+- I also followed the Code Institute Blog walkthrough to start my project off.
+- I used the django documentation
+- I used the summernote documentation
+- I used the bootstrap documentation
