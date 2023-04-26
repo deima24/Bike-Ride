@@ -297,3 +297,17 @@ To deploy my site to Heroku I followed the following steps
 - I used the django documentation
 - I used the summernote documentation
 - I used the bootstrap documentation
+
+
+## PP8 Validator
+
+All pages were run through the ![PEP8](https://pep8ci.herokuapp.com/). There were some errors, for example, lines to long and whitespace.
+
+![pep8](media/images/pep8.png)
+
+
+# Acknowledgements
+
+- My mentor
+- The wonderful slack community
+- My girlfriend for putting up with my stress
