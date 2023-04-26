@@ -3,16 +3,17 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
-from django.views.generic import (CreateView,DetailView, ListView, DeleteView, UpdateView)
+from django.views.generic import (CreateView, DetailView, ListView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from django.template.defaultfilters import slugify
+
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "rides.html"
-    #if there is more then 6 then django add page navigation
+    # if there is more then 6 then django add page navigation
     paginate_by = 6
 
 
@@ -37,7 +38,6 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -74,7 +74,7 @@ class PostDetail(View):
 class PostLike(View):
 
     def post(self, request, slug):
-        post =  get_object_or_404(Post, slug=slug)
+        post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -82,7 +82,6 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
 
 
 class PostCreate(CreateView):
@@ -99,6 +98,7 @@ class PostCreate(CreateView):
         form.instance.slug = slugify(form.instance.title)
         messages.success(self.request, 'Post created successfully')
         return super(PostCreate, self).form_valid(form)
+
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ A view to delete an post """
@@ -123,7 +123,7 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """ If form is valid return to browse ideas"""
         self.success_url + str(self.object.pk) + '/'
         messages.success(self.request, 'Post updated successfully')
-        return super().form_valid(form) 
+        return super().form_valid(form)
 
     def test_func(self):
         """ A function to test if the user is the author """
