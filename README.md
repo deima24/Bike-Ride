@@ -301,7 +301,7 @@ To deploy my site to Heroku I followed the following steps
 
 ## PP8 Validator
 
-All pages were run through the ![PEP8](https://pep8ci.herokuapp.com/). There were some errors, for example, lines to long and whitespace.
+All pages were run through the [PEP8](https://pep8ci.herokuapp.com/). There were some errors, for example, lines to long and whitespace.
 
 ![pep8](media/images/pep8.png)
 
