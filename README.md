@@ -134,6 +134,28 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 ![DeleteAndEdit](media/images/deleteandedit.png)
 
 
+# Wireframes
+
+Home Page
+
+![mainpg](media/images/mainpg.png)
+
+Blog page
+
+![blogpg](media/images/blogpg.png)
+
+Register page
+
+![register](media/images/registerpg.png)
+
+Login page
+
+![login](media/images/loginpg.png)
+
+Post page
+
+![post](media/images/postpg.png)
+
 ## Database
 
 The data was designed to give the user CRUD functionality once signed in. Posts are connected to the author by foreign key which allows users to edit and delete pots connected to their account.
